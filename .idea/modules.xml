@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateQMethods.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateQMethods.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateQMethods_main.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateQMethods_main.iml" group="HibernateQMethods" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HibernateQMethods_test.iml" filepath="$PROJECT_DIR$/.idea/modules/HibernateQMethods_test.iml" group="HibernateQMethods" />
+    </modules>
+  </component>
+</project>

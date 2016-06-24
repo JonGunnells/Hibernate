@@ -1,0 +1,38 @@
+<html>
+<body>
+
+<form action="/" method="get">
+</form>
+
+
+<a href="/">All</a>
+<a href="/?category=alcohol">Alcohol</a>
+<a href="/?category=furniture">Furniture</a>
+<a href="/?category=toiletries">Toiletries</a>
+<a href="/?category=shoes">Shoes</a>
+<a href="/?category=jewelry">Jewelry</a>
+<a href="/?category=food">Food</a>
+
+<table>
+    <tr>
+        <td><b>Name</b></td>
+        <td><b>Email</b></td>
+        <td><b>Category</b></td>
+        <td><b>Credit Card</b></td>
+        <td><b>CVV</b></td>
+        <td><b>Date</b></td>
+        <</tr>
+    {{#purchases}}
+    <tr>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{category}}</td>
+        <td>{{creditCard}}</td>
+        <td>{{cvv}}</td>
+        <td>{{date}}</td>
+    </tr>
+    {{/purchases}}
+</table>
+</body>
+</html>
+

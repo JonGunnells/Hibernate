@@ -36,23 +36,24 @@ public class HibernateController {
                 Customer customer = new Customer(columns[0], columns[1]);
                 customers.save(customer);
 
-
-            }
-
-            if (purchases.count() == 0) {
-                f = new File("purchases.csv");
-                fileScanner.nextLine();
-                while (fileScanner.hasNext()) {
-                    String line = fileScanner.nextLine();
-                    String[] columns = line.split(",");
-                    Customer customer = customers.findOne(Integer.valueOf(columns[3]));
-                    Purchase purchase = new Purchase(Integer.valueOf(columns[0]), columns[1], columns[2], Integer.valueOf(columns[3]), columns[4], customer);
-                    purchases.save(purchase);
-                }
             }
         }
 
+        if (purchases.count() == 0) {
+           File f = new File("purchases.csv");
+           Scanner fileScanner = new Scanner(f);
+            fileScanner.nextLine();
+            while (fileScanner.hasNext()) {
+                String line = fileScanner.nextLine();
+                String[] columns = line.split(",");
+                Customer customer = customers.findOne(Integer.valueOf(columns[0]));
+                Purchase purchase = new Purchase(columns[1], columns[2], Integer.valueOf(columns[3]), columns[4], customer);
+                purchases.save(purchase);
+            }
+        }
     }
+
+
 
 
 
@@ -61,7 +62,6 @@ public class HibernateController {
     public String home(Model model, String category) {
         Iterable<Purchase> purchaseList;
         if (category != null) {
-
             purchaseList = purchases.findByCategory(category);
         }
         else {
